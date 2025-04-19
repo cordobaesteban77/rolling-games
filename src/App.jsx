@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import {getProducts} from "./data/api.js"
+import {getGames} from "./data/api.js"
 
 const App = () => {
   useEffect(() => {
-    getProducts().then((respuesta) => {
+    getGames().then((respuesta) => {
       console.log(respuesta)
     })
   }, [])
