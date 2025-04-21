@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import {getGames} from "./data/api.js"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import LoginScreen from './pages/LoginScreen.jsx'
 
 const App = () => {
   useEffect(() => {
@@ -13,6 +15,11 @@ const App = () => {
   return (
     <div>
       <h1>Proyecto 2do módulo</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<LoginScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

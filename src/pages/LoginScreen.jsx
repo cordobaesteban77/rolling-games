@@ -2,7 +2,12 @@ import React from 'react'
 import {useForm} from "react-hook-form"
 
 const LoginScreen = () => {
-  const {register, handleSubmit} = useForm()
+  const {register, handleSubmit, reset, setFocus, formState: {errors}} = useForm()
+  const logIn = (datos) => {
+    localStorage.setItem("user", JSON.stringify(datos))
+    reset()
+    setFocus("correo")
+  }
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -12,27 +17,29 @@ const LoginScreen = () => {
               <h2 className="fw-bold mb-3">Bienvenido de nuevo</h2>
               <p className="text-muted">Inicia sesión para continuar</p>
             </div>
-            <form>
+            <form onSubmit={handleSubmit(logIn)}>
               <div className="mb-4 position-relative">
                 <label className="form-label">Correo electrónico</label>
-                <input
-                  type="email"
-                  className="form-control form-control-lg ps-4"
-                  {...register("correo")}
-                  placeholder="nombre@ejemplo.com"
-                  required
-                />
+                <input type="email" className="form-control form-control-lg ps-4" {...register("correo", {required: true})} placeholder="nombre@ejemplo.com"/>
+                {
+                  errors.correo && (
+                    <p role='alert' className='text-danger'>
+                      Este campo es obligatorio
+                    </p>
+                  )
+                }
                 <i className="bi bi-envelope-fill input-icon"></i>
               </div>
               <div className="mb-4 position-relative">
                 <label className="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  className="form-control form-control-lg ps-4"
-                  {...register("password")}
-                  placeholder="••••••••"
-                  required
-                />
+                <input type="password" className="form-control form-control-lg ps-4" {...register("password", {required: true})} placeholder="••••••••"/>
+                {
+                  errors.password && (
+                    <p role='alert' className='text-danger'>
+                      Este campo es obligatorio
+                    </p>
+                  )
+                }
                 <i className="bi bi-lock-fill input-icon"></i>
               </div>
               <div className="d-flex justify-content-between align-items-center mb-4">
