@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useForm} from "react-hook-form"
+import {useNavigate} from "react-hook-form"
 
 const LoginScreen = () => {
+  const navigate = useNavigate()
   const {register, handleSubmit, reset, setFocus, formState: {errors}} = useForm()
+  useEffect(() => {
+    localStorage.removeItem("user")
+  }, [])
+  
   const logIn = (datos) => {
     localStorage.setItem("user", JSON.stringify(datos))
     reset()
     setFocus("correo")
+    navigate("/")
   }
   return (
     <div className="container">
-      <div className="row justify-content-center">
+      <div className="row justify-content-center pt-5">
         <div className="col-md-8 col-lg-6">
           <div className="login-container p-5">
             <div className="text-center mb-5">
