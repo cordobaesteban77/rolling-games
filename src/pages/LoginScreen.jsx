@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react'
 import {useForm} from "react-hook-form"
-import {useNavigate} from "react-hook-form"
+import {useNavigate} from "react-router-dom"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const LoginScreen = () => {
+  // localStorage.setItem("usuarios", JSON.stringify([{ username: "Juan", email: "juan@mail.com", password: "1234"}]));
+  const MySwal = withReactContent(Swal)
   const navigate = useNavigate()
   const {register, handleSubmit, reset, setFocus, formState: {errors}} = useForm()
   useEffect(() => {
@@ -10,10 +14,20 @@ const LoginScreen = () => {
   }, [])
   
   const logIn = (datos) => {
-    localStorage.setItem("user", JSON.stringify(datos))
-    reset()
-    setFocus("correo")
-    navigate("/")
+    const usuario = (JSON.parse(localStorage.getItem("usuarios")) || []).find((user) => user.email === datos.correo && user.password === datos.password
+    )
+        if (usuario) {
+          const {username, email} = usuario
+          localStorage.setItem("user", JSON.stringify({username, email}))
+          navigate("/")
+        }
+        else {
+            MySwal.fire({
+            title: "OOPS!",
+            text: "Correo o contraseña incorrectos",
+            icon: "error"
+          });
+        }
   }
   return (
     <div className="container">
@@ -21,7 +35,7 @@ const LoginScreen = () => {
         <div className="col-md-8 col-lg-6">
           <div className="login-container p-5">
             <div className="text-center mb-5">
-              <h2 className="fw-bold mb-3">Bienvenido de nuevo</h2>
+              <h2 className="fw-bold mb-3">Bienvenido de nuevo a Rolling Games</h2>
               <p className="text-muted">Inicia sesión para continuar</p>
             </div>
             <form onSubmit={handleSubmit(logIn)}>
@@ -49,10 +63,7 @@ const LoginScreen = () => {
                 }
                 <i className="bi bi-lock-fill input-icon"></i>
               </div>
-              <div className="d-flex justify-content-between align-items-center mb-4">
-                <a href="#" className="text-decoration-none text-purple">¿Olvidaste tu contraseña?</a>
-              </div>
-              <button type="submit" className="btn btn-custom btn-lg w-100 mb-3">
+              <button type="submit" className="btn btn-custom btn-lg w-100 mb-3 custom-boton">
                 Iniciar sesión
               </button>
               <div className="text-center mt-4">
