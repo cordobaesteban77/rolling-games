@@ -30,17 +30,17 @@ const LoginScreen = () => {
         }
   }
   return (
-    <div className="container">
+    <div className="container bg-dark">
       <div className="row justify-content-center pt-5">
         <div className="col-md-8 col-lg-6">
           <div className="login-container p-5">
             <div className="text-center mb-5">
-              <h2 className="fw-bold mb-3">Bienvenido de nuevo a Rolling Games</h2>
-              <p className="text-muted">Inicia sesión para continuar</p>
+              <h2 className="fw-bold mb-3 text-light">Bienvenido de nuevo a Rolling Games</h2>
+              <p className="text-light">Inicia sesión para continuar</p>
             </div>
             <form onSubmit={handleSubmit(logIn)}>
               <div className="mb-4 position-relative">
-                <label className="form-label">Correo electrónico</label>
+                <label className="form-label text-light">Correo electrónico</label>
                 <input type="email" className="form-control form-control-lg ps-4" {...register("correo", {required: true})} placeholder="nombre@ejemplo.com"/>
                 {
                   errors.correo && (
@@ -52,7 +52,7 @@ const LoginScreen = () => {
                 <i className="bi bi-envelope-fill input-icon"></i>
               </div>
               <div className="mb-4 position-relative">
-                <label className="form-label">Contraseña</label>
+                <label className="form-label text-light">Contraseña</label>
                 <input type="password" className="form-control form-control-lg ps-4" {...register("password", {required: true})} placeholder="••••••••"/>
                 {
                   errors.password && (
@@ -63,11 +63,11 @@ const LoginScreen = () => {
                 }
                 <i className="bi bi-lock-fill input-icon"></i>
               </div>
-              <button type="submit" className="btn btn-custom btn-lg w-100 mb-3 custom-boton">
+              <button type="submit" className="btn btn-custom btn-lg w-100 mb-3 text-light custom-boton">
                 Iniciar sesión
               </button>
               <div className="text-center mt-4">
-                <span className="text-muted">¿No tienes cuenta? </span>
+                <span className="text-light">¿No tienes cuenta? </span>
                 <a href="#" className="text-decoration-none text-purple fw-bold">Regístrate</a>
               </div>
             </form>
