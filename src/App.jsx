@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react'
-import {getGames} from "./data/api.js"
+import React from 'react';
+import AdminScreen from './pages/AdminScreen'; 
+import Sobrenosotros from './components/Sobrenosotros';
+
+
 
 const App = () => {
-  useEffect(() => {
-    getGames().then((respuesta) => {
-      console.log(respuesta)
-    })
-  }, [])
-  
-  
-  
-  return (
+return (
     <div>
-      <h1>Proyecto 2do módulo</h1>
+      <AdminScreen />
+      <Sobrenosotros /> 
     </div>
-  )
+  );
 }
-
-export default App
+export default App;

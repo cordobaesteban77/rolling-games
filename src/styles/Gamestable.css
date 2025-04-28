@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 1rem;
+} 
+
+.table-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 15px;
+  background-color: #1c1c1c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+  color: #00ffff;
+}
+
+th {
+    padding: 1rem;
+    text-transform: uppercase;
+  }
+
+/* Estilo general para los botones */
+.btn {
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+  }
+  
+  
+  .boton-eliminar {
+    color: #ff4d4d;
+  }
+  
+  .boton-editar {
+    color: #4da6ff;
+  }
+  
+  .boton-destacar.activo {
+    color: gold;
+  }
