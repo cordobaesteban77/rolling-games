@@ -2,13 +2,10 @@ import React from 'react';
 import AdminScreen from './pages/AdminScreen'; 
 import Sobrenosotros from './components/Sobrenosotros';
 
-
-
-const App = () => {
+const App = () => {  
 return (
     <div>
-      <AdminScreen />
-      <Sobrenosotros /> 
+      
     </div>
   );
 }
