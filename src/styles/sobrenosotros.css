@@ -1,0 +1,45 @@
+.sobremargin {
+    padding: 2rem;
+    max-width: 1400px; /* ancho máximo */
+    margin: 0 auto; /* centrado horizontal */
+    background-color: black;
+  }
+  
+  .custom-card {
+    background-color: #1c1c1c;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    padding: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    font-size: 1.1rem;
+  }
+
+  /* .card-nosotros {
+    height: 700px;
+  } */
+
+  /* .img-gonzalo {
+    height: 563px;
+  } */
+  
+  
