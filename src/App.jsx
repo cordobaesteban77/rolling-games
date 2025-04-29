@@ -4,6 +4,7 @@ import LoginScreen from './pages/LoginScreen.jsx'
 import HomeScreen from './components/HomeScreen.jsx'
 import GameScreen from './pages/GameScreen.jsx'
 import InicioScreen from './pages/InicioScreen.jsx'
+import RegisterScreen from './pages/RegistroScreen.jsx'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
             <Route path='/' element={<InicioScreen />} />
             <Route path='/game/:id' element={<GameScreen />} />
             <Route path='/login' element={<LoginScreen />} />
+            <Route path='/registro' element={<RegisterScreen />} />
         </Routes>
       </BrowserRouter>
     </div>
