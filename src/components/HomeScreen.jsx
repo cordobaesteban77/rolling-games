@@ -33,7 +33,7 @@ const HomeScreen = () => {
     <div className="container">
         <div className="row py-5">
             <div className="col">
-                <h1>Rolling Games</h1>
+                <h1 className='text-light'>Rolling Games</h1>
             </div>
         </div>
         <div className="row">

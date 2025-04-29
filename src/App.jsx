@@ -7,7 +7,7 @@ import InicioScreen from './pages/InicioScreen.jsx'
 
 const App = () => {
   return (
-    <div>
+    <div className='bg-dark'>
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<InicioScreen />} />

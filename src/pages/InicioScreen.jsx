@@ -3,7 +3,9 @@ import HomeScreen from '../components/HomeScreen'
 
 const InicioScreen = () => {
   return (
-    <HomeScreen />
+    <div>
+        <HomeScreen />
+    </div>
   )
 }
 
