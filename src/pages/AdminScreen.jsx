@@ -71,7 +71,7 @@ const AdminScreen = () => {
   
 
   return (
-    <div>
+    <div className="text-light">
       <h1 className="fs-3 fw-bold text-center p-4">Administración de productos 🎮</h1>
       {
         productos.length===0 &&(

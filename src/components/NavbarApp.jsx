@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {NavLink} from "react-router"
 // import Logo from '../assets/LOGO_RollingGames.png';
 const NavBarApp = () => {
   return (
@@ -29,10 +30,21 @@ const NavBarApp = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home" style={navLinkStyle}>Inicio</Nav.Link>
-            <Nav.Link href="#login" style={navLinkStyle}>Login</Nav.Link>
-            <Nav.Link href="#register" style={navLinkStyle}>Registrarse</Nav.Link>
-            <Nav.Link href="#register" style={navLinkStyle}>Admin</Nav.Link>
+            <Nav.Link style={navLinkStyle}>
+                <NavLink to="/">Inicio</NavLink>
+            </Nav.Link>
+            <Nav.Link style={navLinkStyle}>
+                <NavLink to="/login">Login</NavLink>
+            </Nav.Link>
+            <Nav.Link style={navLinkStyle}>
+                <NavLink to="/registro">Registrarse</NavLink>
+            </Nav.Link>
+            <Nav.Link style={navLinkStyle}>
+                <NavLink to="/admin">Admin</NavLink>
+            </Nav.Link>
+            {/* <Nav.Link style={navLinkStyle}>Login</Nav.Link>
+            <Nav.Link style={navLinkStyle}>Registrarse</Nav.Link>
+            <Nav.Link style={navLinkStyle}>Admin</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

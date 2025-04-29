@@ -4,7 +4,7 @@ import HomeScreen from '../components/HomeScreen'
 import GameScreen from '../pages/GameScreen'
 // import NotFoundScreen from '../pages/NotFoundScreen'
 import NavbarApp from '../components/NavbarApp'
-// import AdminScreen from '../pages/AdminScreen'
+import AdminScreen from '../pages/AdminScreen'
 import AdminRoute from './AdminRoute'
 
 const PrincipalRoutes = () => {
@@ -13,11 +13,11 @@ const PrincipalRoutes = () => {
     <NavbarApp />
     <Routes>
         <Route path="/" element={<HomeScreen />} />
-        <Route path="/product/:id" element={<GameScreen />} />
-        {/* <Route path="/admin" element={
-          <AdminRoute>
+        <Route path="/game/:id" element={<GameScreen />} />
+        <Route path="/admin" element={
+          
             <AdminScreen />
-          </AdminRoute>} /> */}
+          } />
         {/* <Route path="*" element={<NotFoundScreen />} /> */}
     </Routes>
     </>

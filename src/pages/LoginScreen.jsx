@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {useForm} from "react-hook-form"
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
@@ -68,7 +68,7 @@ const LoginScreen = () => {
               </button>
               <div className="text-center mt-4">
                 <span className="text-light">¿No tienes cuenta? </span>
-                <a href="#" className="text-decoration-none text-purple fw-bold">Regístrate</a>
+                <Link to="/registro" className="text-decoration-none text-purple fw-bold">Regístrate</Link>
               </div>
             </form>
           </div>
